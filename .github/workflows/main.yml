@@ -75,7 +75,6 @@ jobs:
       - uses: actions/checkout@v4
       - run: ./gradlew :test
       - uses: actions/upload-artifact@v4  # upload test results
-        if: success() || failure()        # run this step even if previous step failed
-          with:
-            name: test-results
-            path: java-junit.xml
+        with:
+          name: test-results
+          path: java-junit.xml
