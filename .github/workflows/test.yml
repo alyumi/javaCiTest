@@ -5,12 +5,14 @@ on:
     types:
       - completed
 
+permissions:
+  contents: read
+  actions: write
+  checks: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
       - uses: actions/checkout@v4
       - run: ./gradlew :test
